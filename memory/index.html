@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `memory` mod in crate `rendy`."><meta name="keywords" content="rust, rustlang, rust-lang, memory"><title>rendy::memory - Rust</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css"><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script src="../../storage.js"></script></head><body class="rustdoc mod"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><p class='location'>Module memory</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#traits">Traits</a></li></ul></div><p class='location'><a href='../index.html'>rendy</a></p><script>window.sidebarCurrent = {name: 'memory', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script></div></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../../theme.js"></script><nav class="sub"><form class="search-form js-only"><div class="search-container"><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><a id="settings-menu" href="../../settings.html"><img src="../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><h1 class='fqn'><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span></span><span class='in-band'>Module <a href='../index.html'>rendy</a>::<wbr><a class="mod" href=''>memory</a></span></h1><div class='docblock'><p>GPU memory management</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Coherent.html"
+                                  title='struct rendy::memory::Coherent'>Coherent</a></td>
+                           <td class='docblock-short'>
+                                <p>Coherent marker.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Data.html"
+                                  title='struct rendy::memory::Data'>Data</a></td>
+                           <td class='docblock-short'>
+                                <p>Full speed GPU access.
+Optimal for render targets and persistent resources.
+Avoid memory with host access.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DedicatedAllocator.html"
+                                  title='struct rendy::memory::DedicatedAllocator'>DedicatedAllocator</a></td>
+                           <td class='docblock-short'>
+                                <p>Dedicated memory allocator that uses memory object per allocation requested.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DedicatedBlock.html"
+                                  title='struct rendy::memory::DedicatedBlock'>DedicatedBlock</a></td>
+                           <td class='docblock-short'>
+                                <p>Memory block allocated from <code>DedicatedAllocator</code></p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Download.html"
+                                  title='struct rendy::memory::Download'>Download</a></td>
+                           <td class='docblock-short'>
+                                <p>GPU to CPU data flow with mapping.
+Used for copying data from <code>Data</code> memory to be read by the host.
+Host access is guaranteed.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Dynamic.html"
+                                  title='struct rendy::memory::Dynamic'>Dynamic</a></td>
+                           <td class='docblock-short'>
+                                <p>CPU to GPU data flow with update commands.
+Used for dynamic buffer data, typically constant buffers.
+Host access is guaranteed.
+Prefers memory with fast GPU access.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DynamicAllocator.html"
+                                  title='struct rendy::memory::DynamicAllocator'>DynamicAllocator</a></td>
+                           <td class='docblock-short'>
+                                <p>Low-fragmentation allocator.
+Suitable for any type of small allocations.
+Have up to <code>block_size_granularity - 1</code> memory overhead.
+Every freed block can be recycled independently.
+Memory objects can be returned to the system if whole memory object become unused (not implemented yet).</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DynamicBlock.html"
+                                  title='struct rendy::memory::DynamicBlock'>DynamicBlock</a></td>
+                           <td class='docblock-short'>
+                                <p>Memory block allocated from <code>DynamicAllocator</code></p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DynamicConfig.html"
+                                  title='struct rendy::memory::DynamicConfig'>DynamicConfig</a></td>
+                           <td class='docblock-short'>
+                                <p>Config for <code>DynamicAllocator</code>.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Heaps.html"
+                                  title='struct rendy::memory::Heaps'>Heaps</a></td>
+                           <td class='docblock-short'>
+                                <p>Heaps available on particular physical device.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.HeapsConfig.html"
+                                  title='struct rendy::memory::HeapsConfig'>HeapsConfig</a></td>
+                           <td class='docblock-short'>
+                                <p>Config for <code>Heaps</code> allocator.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.LinearAllocator.html"
+                                  title='struct rendy::memory::LinearAllocator'>LinearAllocator</a></td>
+                           <td class='docblock-short'>
+                                <p>Linear allocator that return memory from chunk sequentially.
+It keeps only number of bytes allocated from each chunk.
+Once chunk is exhausted it is placed into list.
+When all blocks allocated from head of that list are freed,
+head is freed as well.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.LinearBlock.html"
+                                  title='struct rendy::memory::LinearBlock'>LinearBlock</a></td>
+                           <td class='docblock-short'>
+                                <p>Memory block allocated from <code>LinearAllocator</code></p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.LinearConfig.html"
+                                  title='struct rendy::memory::LinearConfig'>LinearConfig</a></td>
+                           <td class='docblock-short'>
+                                <p>Config for <code>DynamicAllocator</code>.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.MappedRange.html"
+                                  title='struct rendy::memory::MappedRange'>MappedRange</a></td>
+                           <td class='docblock-short'>
+                                <p>Represents range of the memory mapped to the host.
+Provides methods for safer host access to the memory.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.MaybeCoherent.html"
+                                  title='struct rendy::memory::MaybeCoherent'>MaybeCoherent</a></td>
+                           <td class='docblock-short'>
+                                <p>Value that contains either coherent marker or non-coherent marker.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Memory.html"
+                                  title='struct rendy::memory::Memory'>Memory</a></td>
+                           <td class='docblock-short'>
+                                <p>Memory object wrapper.
+Contains size and properties of the memory.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.MemoryBlock.html"
+                                  title='struct rendy::memory::MemoryBlock'>MemoryBlock</a></td>
+                           <td class='docblock-short'>
+                                <p>Memory block allocated from <code>Heaps</code>.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.NonCoherent.html"
+                                  title='struct rendy::memory::NonCoherent'>NonCoherent</a></td>
+                           <td class='docblock-short'>
+                                <p>Non-coherent marker.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Upload.html"
+                                  title='struct rendy::memory::Upload'>Upload</a></td>
+                           <td class='docblock-short'>
+                                <p>CPU to GPU data flow with mapping.
+Used for staging data before copying to the <code>Data</code> memory.
+Host access is guaranteed.</p>
+
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.HeapsError.html"
+                                  title='enum rendy::memory::HeapsError'>HeapsError</a></td>
+                           <td class='docblock-short'>
+                                <p>Possible errors returned by <code>Heaps</code>.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Kind.html"
+                                  title='enum rendy::memory::Kind'>Kind</a></td>
+                           <td class='docblock-short'>
+                                <p>Allocator kind.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.MemoryUsageValue.html"
+                                  title='enum rendy::memory::MemoryUsageValue'>MemoryUsageValue</a></td>
+                           <td class='docblock-short'>
+                                <p>Well-known memory usage types.</p>
+
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.Allocator.html"
+                                  title='trait rendy::memory::Allocator'>Allocator</a></td>
+                           <td class='docblock-short'>
+                                <p>Allocator trait implemented for various allocators.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.Block.html"
+                                  title='trait rendy::memory::Block'>Block</a></td>
+                           <td class='docblock-short'>
+                                <p>Block that owns a <code>Range</code> of the <code>Memory</code>.
+Implementor must ensure that there can't be any other blocks
+with overlapping range (either through type system or safety notes for unsafe functions).
+Provides access to safe memory range mapping.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.MemoryUsage.html"
+                                  title='trait rendy::memory::MemoryUsage'>MemoryUsage</a></td>
+                           <td class='docblock-short'>
+                                <p>Memory usage trait.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.Write.html"
+                                  title='trait rendy::memory::Write'>Write</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait for memory region suitable for host writes.</p>
+
+                           </td>
+                       </tr></table></section><section id="search" class="content hidden"></section><section class="footer"></section><aside id="help" class="hidden"><div><h1 class="hidden">Help</h1><div class="shortcuts"><h2>Keyboard Shortcuts</h2><dl><dt><kbd>?</kbd></dt><dd>Show this help dialog</dd><dt><kbd>S</kbd></dt><dd>Focus the search field</dd><dt><kbd>↑</kbd></dt><dd>Move up in search results</dd><dt><kbd>↓</kbd></dt><dd>Move down in search results</dd><dt><kbd>↹</kbd></dt><dd>Switch tab</dd><dt><kbd>&#9166;</kbd></dt><dd>Go to active search result</dd><dt><kbd>+</kbd></dt><dd>Expand all sections</dd><dt><kbd>-</kbd></dt><dd>Collapse all sections</dd></dl></div><div class="infos"><h2>Search Tricks</h2><p>Prefix searches with a type followed by a colon (e.g. <code>fn:</code>) to restrict the search to a given type.</p><p>Accepted types are: <code>fn</code>, <code>mod</code>, <code>struct</code>, <code>enum</code>, <code>trait</code>, <code>type</code>, <code>macro</code>, and <code>const</code>.</p><p>Search functions by type signature (e.g. <code>vec -> usize</code> or <code>* -> vec</code>)</p><p>Search multiple things at once by splitting your query with comma (e.g. <code>str,u8</code> or <code>String,struct:Vec,test</code>)</p></div></div></aside><script>window.rootPath = "../../";window.currentCrate = "rendy";</script><script src="../../aliases.js"></script><script src="../../main.js"></script><script defer src="../../search-index.js"></script></body></html>

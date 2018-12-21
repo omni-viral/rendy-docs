@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["shaderc","Rust binding for the shaderc library."]],"struct":[["ShaderInfo","Dynamic shader."]],"trait":[["Shader","Interface to create shader modules from shaders. Implemented for static shaders via [`compile_to_spirv!`] macro."]],"type":[["StaticShaderInfo","Shader info with static data."]]});

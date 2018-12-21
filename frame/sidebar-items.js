@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["cirque","Ring buffers for using with frames."]],"struct":[["CompleteFrame","Proof that frame is complete."],["Frame","Single frame rendering task. Command buffers can be submitted as part of the `Frame`."],["Frames","Timeline of frames, complete, pending and next."]],"type":[["Fences","Fences collection."]]});

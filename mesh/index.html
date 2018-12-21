@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `mesh` mod in crate `rendy`."><meta name="keywords" content="rust, rustlang, rust-lang, mesh"><title>rendy::mesh - Rust</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css"><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script src="../../storage.js"></script></head><body class="rustdoc mod"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><p class='location'>Module mesh</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#traits">Traits</a></li><li><a href="#types">Type Definitions</a></li></ul></div><p class='location'><a href='../index.html'>rendy</a></p><script>window.sidebarCurrent = {name: 'mesh', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script></div></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../../theme.js"></script><nav class="sub"><form class="search-form js-only"><div class="search-container"><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><a id="settings-menu" href="../../settings.html"><img src="../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><h1 class='fqn'><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span></span><span class='in-band'>Module <a href='../index.html'>rendy</a>::<wbr><a class="mod" href=''>mesh</a></span></h1><div class='docblock'><p>This crates provides means to deal with vertex buffers and meshes.</p>
+<p><code>Attribute</code> and <code>VertexFormat</code> allow vertex structure to declare semantics.
+<code>Mesh</code> can be created from typed vertex structures and provides mechanism to bind
+vertex attributes required by shader interface.</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Color.html"
+                                  title='struct rendy::mesh::Color'>Color</a></td>
+                           <td class='docblock-short'>
+                                <p>Type for color attribute of vertex</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Incompatible.html"
+                                  title='struct rendy::mesh::Incompatible'>Incompatible</a></td>
+                           <td class='docblock-short'>
+                                <p>failure::Error type returned by <code>Mesh::bind</code> in case of mesh's vertex buffers are incompatible with requested vertex formats.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.IndexBuffer.html"
+                                  title='struct rendy::mesh::IndexBuffer'>IndexBuffer</a></td>
+                           <td class='docblock-short'>
+                                <p>Index buffer with it's type</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Mesh.html"
+                                  title='struct rendy::mesh::Mesh'>Mesh</a></td>
+                           <td class='docblock-short'>
+                                <p>Single mesh is a collection of buffers that provides available attributes.
+Exactly one mesh is used per drawing call in common.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.MeshBuilder.html"
+                                  title='struct rendy::mesh::MeshBuilder'>MeshBuilder</a></td>
+                           <td class='docblock-short'>
+                                <p>Generics-free mesh builder.
+Useful for creating mesh from non-predefined set of data.
+Like from glTF.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Normal.html"
+                                  title='struct rendy::mesh::Normal'>Normal</a></td>
+                           <td class='docblock-short'>
+                                <p>Type for texture coord attribute of vertex</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PosColor.html"
+                                  title='struct rendy::mesh::PosColor'>PosColor</a></td>
+                           <td class='docblock-short'>
+                                <p>Vertex format with position and RGBA8 color attributes.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PosNorm.html"
+                                  title='struct rendy::mesh::PosNorm'>PosNorm</a></td>
+                           <td class='docblock-short'>
+                                <p>Vertex format with position and normal attributes.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PosNormTangTex.html"
+                                  title='struct rendy::mesh::PosNormTangTex'>PosNormTangTex</a></td>
+                           <td class='docblock-short'>
+                                <p>Vertex format with position, normal, tangent, and UV texture coordinate attributes.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PosNormTex.html"
+                                  title='struct rendy::mesh::PosNormTex'>PosNormTex</a></td>
+                           <td class='docblock-short'>
+                                <p>Vertex format with position, normal and UV texture coordinate attributes.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PosTex.html"
+                                  title='struct rendy::mesh::PosTex'>PosTex</a></td>
+                           <td class='docblock-short'>
+                                <p>Vertex format with position and UV texture coordinate attributes.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Position.html"
+                                  title='struct rendy::mesh::Position'>Position</a></td>
+                           <td class='docblock-short'>
+                                <p>Type for position attribute of vertex.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Tangent.html"
+                                  title='struct rendy::mesh::Tangent'>Tangent</a></td>
+                           <td class='docblock-short'>
+                                <p>Type for tangent attribute of vertex</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TexCoord.html"
+                                  title='struct rendy::mesh::TexCoord'>TexCoord</a></td>
+                           <td class='docblock-short'>
+                                <p>Type for texture coord attribute of vertex</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VertexBuffer.html"
+                                  title='struct rendy::mesh::VertexBuffer'>VertexBuffer</a></td>
+                           <td class='docblock-short'>
+                                <p>Vertex buffer with it's format</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VertexFormat.html"
+                                  title='struct rendy::mesh::VertexFormat'>VertexFormat</a></td>
+                           <td class='docblock-short'>
+                                <p>Vertex format contains information to initialize graphics pipeline
+Attributes must be sorted by offset.</p>
+
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Bind.html"
+                                  title='enum rendy::mesh::Bind'>Bind</a></td>
+                           <td class='docblock-short'>
+                                <p>Result of buffers bindings.
+It only contains <code>IndexBufferView</code> (if index buffers exists)
+and vertex count.
+Vertex buffers are in separate <code>VertexBufferSet</code></p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Indices.html"
+                                  title='enum rendy::mesh::Indices'>Indices</a></td>
+                           <td class='docblock-short'>
+                                <p>Abstracts over two types of indices and their absence.</p>
+
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.AsAttribute.html"
+                                  title='trait rendy::mesh::AsAttribute'>AsAttribute</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait for vertex attributes to implement</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.AsVertex.html"
+                                  title='trait rendy::mesh::AsVertex'>AsVertex</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait implemented by all valid vertex formats.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.Query.html"
+                                  title='trait rendy::mesh::Query'>Query</a></td>
+                           <td class='docblock-short'>
+                                <p>Allows to query specific <code>Attribute</code>s of <code>AsVertex</code></p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.WithAttribute.html"
+                                  title='trait rendy::mesh::WithAttribute'>WithAttribute</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait implemented by all valid vertex formats for each field</p>
+
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.Attribute.html"
+                                  title='type rendy::mesh::Attribute'>Attribute</a></td>
+                           <td class='docblock-short'>
+                                <p>Vertex attribute type.</p>
+
+                           </td>
+                       </tr></table></section><section id="search" class="content hidden"></section><section class="footer"></section><aside id="help" class="hidden"><div><h1 class="hidden">Help</h1><div class="shortcuts"><h2>Keyboard Shortcuts</h2><dl><dt><kbd>?</kbd></dt><dd>Show this help dialog</dd><dt><kbd>S</kbd></dt><dd>Focus the search field</dd><dt><kbd>↑</kbd></dt><dd>Move up in search results</dd><dt><kbd>↓</kbd></dt><dd>Move down in search results</dd><dt><kbd>↹</kbd></dt><dd>Switch tab</dd><dt><kbd>&#9166;</kbd></dt><dd>Go to active search result</dd><dt><kbd>+</kbd></dt><dd>Expand all sections</dd><dt><kbd>-</kbd></dt><dd>Collapse all sections</dd></dl></div><div class="infos"><h2>Search Tricks</h2><p>Prefix searches with a type followed by a colon (e.g. <code>fn:</code>) to restrict the search to a given type.</p><p>Accepted types are: <code>fn</code>, <code>mod</code>, <code>struct</code>, <code>enum</code>, <code>trait</code>, <code>type</code>, <code>macro</code>, and <code>const</code>.</p><p>Search functions by type signature (e.g. <code>vec -> usize</code> or <code>* -> vec</code>)</p><p>Search multiple things at once by splitting your query with comma (e.g. <code>str,u8</code> or <code>String,struct:Vec,test</code>)</p></div></div></aside><script>window.rootPath = "../../";window.currentCrate = "rendy";</script><script src="../../aliases.js"></script><script src="../../main.js"></script><script defer src="../../search-index.js"></script></body></html>

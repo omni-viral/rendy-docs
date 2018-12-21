@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Layout","Pipeline layout"],["Pipeline","Pipeline info"],["RenderPassNode","Render pass node."],["SetLayout","Set layout"]],"trait":[["RenderPass","Render pass."]]});
