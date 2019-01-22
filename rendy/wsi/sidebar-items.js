@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["NextImages","Represents acquire frames that will be presented next."],["Surface","Rendering target bound to window."],["Target","Rendering target bound to window. With swapchain created."]]});
+initSidebarItems({"enum":[["Backbuffer","Backbuffer of the `Target`. Either collection of `Image`s or framebuffer."]],"struct":[["NextImages","Represents acquire frames that will be presented next."],["Surface","Rendering target bound to window."],["Target","Rendering target bound to window. With swapchain created."]]});
